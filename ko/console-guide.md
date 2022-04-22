@@ -75,8 +75,8 @@ IP 주소 영역이 한쪽이 다른 한쪽과 포함관계가 되어서는 안�
 1. 'Network > Peering Gateway > 프로젝트 간 피어링' 으로 이동 합니다.
 2. '프로젝트간 간 피어링 생성' 버튼을 클릭 합니다.
 3. '이름, 로컬 VPC, 피어 리전, 피어 Tenant ID, 피어 VPC ID' 을 입력 합니다.</br>
-   > [참고] 피어 Tenant ID, 피어 VPC ID
-   > **피어 Tenant ID** 확인은 하단의 **피어 프로젝트의 피어 Tenant ID 확인 가이드** 내용 참고
+   > [참고] 피어 Tenant ID, 피어 VPC ID <br>
+   > **피어 Tenant ID** 확인은 하단의 **피어 프로젝트의 피어 Tenant ID 확인 가이드** 내용 참고 <br>
    > **피어 VPC ID** 확인은 하단의 **피어 프로젝트의 피어 VPC ID 확인 가이드** 내용 참고
 
 ### 프로젝트 피어링 허용 가이드
