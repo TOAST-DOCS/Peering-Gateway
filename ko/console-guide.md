@@ -1,8 +1,7 @@
 ## Network > Peering Gateway > 콘솔 사용 가이드
 
 본 문서에서는 콘솔에서 Peering Gateway를 다룰 때 필요한 내용을 기술합니다.
-<br>
-VPC와 각 항목의 Quota는 아래와 같습니다.
+각 항목의 Quota는 아래와 같습니다.
 
 항목 | 최대값
 -------- | ---------- 
