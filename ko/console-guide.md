@@ -1,6 +1,6 @@
 ## Network > Peering Gateway > 콘솔 사용 가이드
 
-본 문서에서는 콘솔에서 Peering Gateway를 다룰 때 필요한 내용을 기술합니다.<br>
+콘솔에서 Peering Gateway 서비스를 사용하는 방법을 설명합니다.
 
 ## 피어링
 
