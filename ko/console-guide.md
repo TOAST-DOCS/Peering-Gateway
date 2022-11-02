@@ -123,7 +123,7 @@
 
 ### 라우트
 
-피어링에서 제공되는 **라우트** 설정을 이용하면 피어 VPC의 VM Instance를 경유하여 다른 VPC로 트래픽을 전달하는 구성을 할 수 있습니다. 피어링의 라우트는 피어링으로 부터 유입된 모든 트래픽이 전달될 Gateway로 VM Instance의 Port 및 Virtual IP Port를 지정할 수 있습니다. 라우트의 Gateway가 되는 VM Instance에는 Network Appliance VM을 배치하여 VM Instance내부에서 트래픽 제어를 하고 다른 피어링 으로 트래픽을 전달할 수 있습니다.
+피어링에서 제공되는 **라우트** 설정을 이용하면 피어 VPC의 VM Instance를 경유하여 다른 VPC로 트래픽을 전달하는 구성을 할 수 있습니다. 피어링의 라우트는 설정은 피어링으로 부터 유입된 모든 트래픽이 전달 될 VM Instance의 Port 및 Virtual IP Port를 지정할 수 있습니다. 라우트의 Gateway가 되는 VM Instance에는 Network Appliance VM을 배치하여 VM Instance내부에서 트래픽 제어를 하고 다른 피어링 으로 트래픽을 전달할 수 있습니다.
 
 > [참고] 현재는 한국(평촌), 한국(판교) 리전에서만 기능이 제공됩니다.
 
