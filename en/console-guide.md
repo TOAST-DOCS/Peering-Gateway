@@ -7,6 +7,8 @@ This guide describes how to use the Peering Gateway service from the console.
 **Peering** is a feature to connect two different **VPCs**. Normally, VPCs cannot communicate with each other because they are in different network zones. You can connect them using a **floating IP**, but it incurs extra charges depending on your network usage. However, the peering feature allows you to connect two **VPCs** at no additional cost.
 
 * Peering connects two different VPCs. Connecting to another VPC across a VPC is not supported. For example, in the `A <-> B <-> C` connection, `A` and `C` cannot be connected.
+* If you want to connect to a different VPC through a peer VPC, configure the **Route** settings provided from Peering so that the packets are delivered via VM instances.
+  > [Note] For how to use Route, see "Common Feature > Route" below. 
 * If the IP address ranges of the two VPCs overlap, they cannot be used.<br>
   Each IP address range must not be a subset of the other. Otherwise, peering creation will fail.
 * In regions other than the Korea regions, communication with subnets not associated with the **Default Routing Table** is not possible.
@@ -21,6 +23,8 @@ This guide describes how to use the Peering Gateway service from the console.
 **Region peering** is a feature to connect two **VPCs** created in different regions. Peering can be used to connect VPCs in the same region, but it cannot be used to connect VPCs in different regions. However, region peering allows you to connect two VPCs in different regions.
 
 * Region peering connects two VPCs in different regions. Connecting to another VPC across a VPC is not supported. For example, in the `A <-> B <-> C` connection, `A` and `C` cannot be connected.
+* If you want to connect to a different VPC through a peer VPC, configure the **Route** settings provided from Peering so that the packets are delivered via VM instances.
+  > [Note] For how to use Route, see "Common Feature > Route" below. 
 * Region peering is only available for VPCs in the Korea (Pyeongchon) Region and the Korea (Pangyo) Region.
 * Only two VPCs of the same account and the same project can be connected.
 * When you create a region peering, it is automatically created in the other connected region.
@@ -55,6 +59,8 @@ To create a region peering, you need to know the **VPC ID** of the VPC that beco
 **Project peering** is a feature to connect two **VPCs** created in different projects. Peering can be used to connect VPCs in the same project, but it cannot be used to connect VPCs in different project. However, the project peering feature allows you to connect two VPCs in different projects.
 
 * Project peering connects two VPCs in different projects. Connecting to another VPC across a VPC is not supported. For example, in the `A <-> B <-> C` connection, `A` and `C` cannot be connected.
+* If you want to connect to a different VPC through a peer VPC, configure the **Route** settings provided from Peering so that the packets are delivered via VM instances.
+  > [Note] For how to use Route, see "Common Feature > Route" below.  
 * Project peering is only available for VPCs in the Korea (Pyeongchon) Region and the Korea (Pangyo) Region.
 * Only two VPCs in different projects in the same region can be connected.
 * When you create a project peering, it is automatically created in the other connected project.
@@ -110,3 +116,30 @@ To create a **project peering**, you need to know the **tenant ID** of the peer 
 2. Go to **Network > VPC > Management**.
 3. Select the peering target or any entry among VPCs displayed on the screen.
 4. Copy the ID value shown in **Basic Information > Tenant ID**.
+
+## Common Feature
+
+This section describes the common feature provided from Peering (Peering, Region peering, and Project peering). 
+
+### Route
+
+The **Route** settings provided from Peering allows you to make a configuration where traffic is delivered to a different VPC via VM instances of a peer VPC. The peering's route allows you to specify and configure a VM instance's port and virtual IP port that processes all incoming traffic from the peering. By deploying Network Virtual Appliance VM in a VM instance that serves as the route's gateway, you can control traffic in the VM instance and deliver it to a different peering. 
+* If you want to configure a Hub and Spoke VPC connection through peering and control all traffic with Network Virtual Appliance located in the Hub VPC, you can use the routing feature of Peering.
+
+> [Note] This feature is only available for VPCs in the Korea (Pyeongchon) Region and the Korea (Pangyo) Region.
+
+#### Create Route
+
+1. Select a peering to configure Route
+2. Select Route at the bottom tab
+3. Select **Create Route** 
+4. For Peering, select **Gateway Category** (Project peering and Region peering do not exist.)
+   > [Note] **Peer Gateway** is to add a route to the **Peer VPC** that you selected when creating the peering, and **Local Gateway** is the **Local VPC** location.<br>
+5. Click Confirm after selecting the gateway.
+   > [Note] Gateway can only select instances and virtual IPs.<br>
+
+#### Delete Route
+
+1. Select a peering for which you want to delete the route settings
+2. Select a route to delete
+3. Click **Delete Route**.
