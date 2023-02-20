@@ -132,7 +132,14 @@ The **Route** settings provided from Peering allows you to make a configuration 
 
 1. Select a peering to configure Route
 2. Select Route at the bottom tab
-3. Select **Create Route** 
+3. Select **Change Route** 
+   > [Note] For peering, there are two buttons. **Change Peer Route** means adding a route to the **Peer VPC** selected when creating a peering, and **Change Local Route** means the location for **Local VPC**.<br> 
+4. Click the **+** button.
+5. Enter the target CIDR.
+6. Select a gateway.
+    > [Note] For gateway, only instances and virtual IPs can be seleted.<br>
+7. Click the **Confirm** button.
+
 4. For Peering, select **Gateway Category** (Project peering and Region peering do not exist.)
    > [Note] **Peer Gateway** is to add a route to the **Peer VPC** that you selected when creating the peering, and **Local Gateway** is the **Local VPC** location.<br>
 5. Click Confirm after selecting the gateway.
@@ -140,6 +147,9 @@ The **Route** settings provided from Peering allows you to make a configuration 
 
 #### Delete Route
 
-1. Select a peering for which you want to delete the route settings
-2. Select a route to delete
-3. Click **Delete Route**.
+1. Select a peering for which you want to delete the route settings.
+2. Select a route at the bottom tab.
+3. Click the **Change Route** button.
+    > [Note] For peering, there are two buttons. **Change Peer Route** means adding a route to the **Peer VPC** selected when creating a peering, and **Change Local Route** means the location for **Local VPC**.<br> 
+4. Click the **-** button for the route to delete.
+5. Click the **Confirm** button.
