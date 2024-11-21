@@ -12,17 +12,25 @@ This guide describes how to use the Peering Gateway service from the console.
 * If the IP address ranges of the two VPCs overlap, they cannot be used.<br>
   Each IP address range must not be a subset of the other. Otherwise, peering creation will fail.
 * In regions other than the Korea regions, communication with subnets not associated with the **Default Routing Table** is not possible.
-    * In the Korea regions, separate routes must be configured in the routing tables of both peered VPCs to enable communication.
-        * Add the route by entering the IP address range of the counterpart VPC in the route's **Target CIDR**, and selecting the **PEERING** entry with the name of the peering from the gateway list.
-        * Communication is possible only with subnets associated with the routing table to which the route has been added.
-        * For a routing table other than the default routing table, if the route is added to the routing table, peer communication becomes available on subnets associated with the routing table.
-        * If you specify a VPC without a subnet when creating a peering, the peering creation fails.
+    > [Note] When you create a peering, a routing rule is implicitly added to the default routing table that forwards packets destined for the other VPC's IP address range to the peering gateway for routing peering communication. Therefore, you cannot set up another route in the default routing table with the other VPC's IP address range as the CIDR. Also, be aware if you add a route that specifies a portion of the other VPC's IP address range as the CIDR because it has a higher priority than routes intended for peering communication, which may prevent peering communication.
+* In the Korea regions, separate routes must be configured in the routing tables of both peered VPCs to enable communication.
+    * Add the route by entering the IP address range of the counterpart VPC in the route's **Target CIDR**, and selecting the **PEERING** entry with the name of the peering from the gateway list.
+    * Communication is possible only with subnets associated with the routing table to which the route has been added.
+    * For a routing table other than the default routing table, if the route is added to the routing table, peer communication becomes available on subnets associated with the routing table.
+    * If you specify a VPC without a subnet when creating a peering, the peering creation fails.
 
 ### Create a Peering
 
 1. Go to **Network > Peering Gateway > Peering**.
 2. Click **Create Peering**.
-3. Enter a **name** and select **Local VPC**, **Peer VPC**.
+3. Enter a **Name** and **Description**, and select **Local VPC**, **Peer VPC** to click **Confirm**.
+
+### Change a Peering
+
+1. Go to **Network > Peering Gateway > Peering**.
+2. Select a peering to change from the peering list.
+3. Click **Change Peering**.
+4. Change the peering's **Name** or **Description** and click **Confirm**.
 
 ### Delete a Peering
 
