@@ -11,7 +11,7 @@ This guide describes how to use the Peering Gateway service from the console.
   > [Note] For how to use Route, see "Common Feature > Route" below. 
 * If the IP address ranges of the two VPCs overlap, they cannot be used.<br>
   Each IP address range must not be a subset of the other. Otherwise, peering creation will fail.
-* In regions other than the Korea regions, communication with subnets not associated with the **Default Routing Table** is not possible.
+* In regions other than the Korea regions, communication is only possible with subnets that are connected to the **Default Routing Table**.
     > [Note] When you create a peering, a routing rule is implicitly added to the default routing table that forwards packets destined for the other VPC's IP address range to the peering gateway for routing peering communication. Therefore, you cannot set up another route in the default routing table with the other VPC's IP address range as the CIDR. Also, be aware if you add a route that specifies a portion of the other VPC's IP address range as the CIDR because it has a higher priority than routes intended for peering communication, which may prevent peering communication.
 * In the Korea regions, separate routes must be configured in the routing tables of both peered VPCs to enable communication.
     * Add the route by entering the IP address range of the counterpart VPC in the route's **Target CIDR**, and selecting the **PEERING** entry with the name of the peering from the gateway list.
