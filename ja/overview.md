@@ -1,8 +1,10 @@
-## Network > Peering Gateway > 概要
+<a id="network-peering-gateway-overview"></a>
+## Network > Peering Gateway > 概要 { #network-peering-gateway-overview }
 
 Peering Gatewayサービスを使用すると、2つの異なる仮想プライベートネットワークを接続できます。2つの異なる**VPC**を接続して、**VPC**に割り当てられたプライベートIPに基づいて相手**VPC**内のリソースに直接アクセスできます。
 
-### 主な機能
+<a id="main-features"></a>
+### 主な機能 { #main-features }
 
 Peering Gatewayサービスで提供するピアリングは次のとおりです。
 

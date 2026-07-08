@@ -1,8 +1,10 @@
-## Network > Peering Gateway > Overview
+<a id="network-peering-gateway-overview"></a>
+## Network > Peering Gateway > Overview { #network-peering-gateway-overview }
 
 The Peering Gateway service allows you to connect two different virtual private networks. By connecting two different **VPCs**, you can use a private IP assigned to a **VPC** to access resources in the counterpart **VPC** directly.
 
-### Main Features
+<a id="main-features"></a>
+### Main Features { #main-features }
 
 The peering types provided by the Peering Gateway service are as follows:
 
