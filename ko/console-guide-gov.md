@@ -1,8 +1,10 @@
-## Network > Peering Gateway > 콘솔 사용 가이드
+<a id="network-peering-gateway-console-user-guide"></a>
+## Network > Peering Gateway > 콘솔 사용 가이드 { #network-peering-gateway-console-user-guide }
 
 콘솔에서 Peering Gateway 서비스를 사용하는 방법을 설명합니다.
 
-## 피어링
+<a id="peering"></a>
+## 피어링 { #peering }
 
 **피어링**은 서로 다른 두 개의 **VPC**를 연결하는 기능입니다. 보통의 경우 VPC는 네트워크 영역이 다르기 때문에 서로 통신이 불가능합니다. **플로팅 IP**를 이용해 연결할 수는 있으나, 네트워크 사용량에 따라 추가로 비용을 지불해야 합니다. 하지만, 피어링 기능을 사용하면 추가 비용 지불 없이 두 개의 **VPC**를 연결할 수 있습니다.
 
@@ -25,26 +27,30 @@
     * 기본 라우팅 테이블이 아닌 라우팅 테이블도 라우트를 추가하면 라우팅 테이블에 연결된 서브넷에서 피어 통신이 가능합니다.
     * 피어링 생성 시 서브넷이 없는 VPC를 지정하면 피어링은 생성에 실패합니다.
 
-### 피어링 생성
+<a id="create-a-peering"></a>
+### 피어링 생성 { #create-a-peering }
 
 1. **Network > Peering Gateway > 피어링**으로 이동합니다.
 2. **피어링 생성** 버튼을 클릭합니다.
 3. **이름**, **설명**을 입력하고 **로컬 VPC**, **피어 VPC**를 선택 후 **확인** 버튼을 클릭합니다.
 
-### 피어링 변경
+<a id="change-a-peering"></a>
+### 피어링 변경 { #change-a-peering }
 
 1. **Network > Peering Gateway > 피어링**으로 이동합니다.
 2. 피어링 목록에서 변경할 피어링을 선택합니다.
 3. **피어링 변경** 버튼을 클릭합니다.
 4. 피어링의 **이름** 또는 **설명**을 변경하고 **확인** 버튼을 클릭합니다.
 
-### 피어링 삭제
+<a id="delete-a-peering"></a>
+### 피어링 삭제 { #delete-a-peering }
 
 1. **Network > Peering Gateway > 피어링**으로 이동합니다.
 2. 피어링 목록에서 삭제할 피어링을 선택합니다.
 3. **피어링 삭제** 버튼을 클릭합니다.
 
-### (기타) API를 이용한 피어링 포트 조회 시 유의 사항
+<a id="other-important-notes-on-retrieving-peering-ports-using-the-api"></a>
+### (기타) API를 이용한 피어링 포트 조회 시 유의 사항 { #other-important-notes-on-retrieving-peering-ports-using-the-api }
 
 API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어링 리소스에 **피어 ID**가 존재하는지 여부에 따라 조회 방법이 달라집니다.
 
@@ -56,7 +62,8 @@ API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어
 * **피어 ID**가 있는 경우: 피어링 ID와 피어 ID를 함께 전달해야 양쪽 VPC의 포트를 모두 조회할 수 있습니다.
     * GET /v2.0/ports?device_id={피어링 ID}&device_id={피어 ID}
 
-## 리전 피어링
+<a id="region-peering"></a>
+## 리전 피어링 { #region-peering }
 
 **리전 피어링**은 서로 다른 리전에 생성된 두 개의 **VPC**를 연결하는 기능입니다. 같은 리전의 VPC는 피어링을 이용하여 연결할 수 있으나 리전이 다른 VPC를 연결할 수는 없습니다. 하지만, 리전 피어링을 이용하면 리전이 다른 두 개의 VPC를 연결할 수 있습니다.
 
@@ -77,7 +84,8 @@ API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어
     * 기본 라우팅 테이블이 아닌 라우팅 테이블에 라우트를 추가하면 라우팅 테이블에 연결된 서브넷에서 피어링 통신이 가능합니다.
     * 리전 피어링 생성 시 서브넷이 없는 VPC를 지정하면 리전 피어링은 생성에 실패합니다.
 
-### 리전 피어링 생성
+<a id="create-a-region-peering"></a>
+### 리전 피어링 생성 { #create-a-region-peering }
 
 !!! tip "알아두기"
     다른 프로젝트 간에 리전 피어링을 생성하려면 피어 프로젝트의 피어링 허용 대상 관리에 내 프로젝트의 테넌트 ID와 VPC ID가 허용되어 있어야 합니다. 동일 프로젝트 내 리전 피어링을 생성하는 경우에는 필요하지 않습니다.
@@ -100,13 +108,15 @@ API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어
     !!! tip "알아두기"
         피어 VPC ID는 하단의 '참고 자료' 항목을 참고하세요.
 
-### 리전 피어링 삭제
+<a id="delete-a-region-peering"></a>
+### 리전 피어링 삭제 { #delete-a-region-peering }
 
 1. **Network > Peering Gateway > 리전 피어링**으로 이동합니다.
 2. 피어링 목록에서 삭제할 리전 피어링을 선택합니다.
 3. **리전 피어링 삭제** 버튼을 클릭합니다.
 
-## 프로젝트 피어링
+<a id="project-peering"></a>
+## 프로젝트 피어링 { #project-peering }
 
 **프로젝트 피어링**은 서로 다른 프로젝트에 생성된 두 개의 **VPC**를 연결하는 기능입니다. 같은 프로젝트의 VPC는 피어링을 이용하여 연결할 수 있으나 프로젝트가 다른 VPC를 연결할 수는 없습니다. 하지만, 프로젝트 피어링 기능을 이용하면 프로젝트가 다른 두 개의 VPC를 연결할 수 있습니다.
 
@@ -127,7 +137,8 @@ API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어
     * 기본 라우팅 테이블이 아닌 라우팅 테이블에 라우트를 추가하면 라우팅 테이블에 연결된 서브넷에서 피어링 통신이 가능합니다.
     * 프로젝트 피어링 생성 시 서브넷이 없는 VPC를 지정하면 프로젝트 피어링은 생성에 실패합니다.
 
-### 프로젝트 피어링 생성
+<a id="create-a-project-peering"></a>
+### 프로젝트 피어링 생성 { #create-a-project-peering }
 
 !!! tip "알아두기"
     프로젝트 피어링을 생성하려면 피어 프로젝트의 피어링 허용 대상 관리에 내 프로젝트의 테넌트 ID와 VPC ID가 허용되어 있어야 합니다.
@@ -142,20 +153,24 @@ API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어
     !!! tip "알아두기"
         피어 테넌트 ID와 피어 VPC ID 확인 방법은 하단 '참고 자료' 항목을 참고하세요.
 
-### 프로젝트 피어링 삭제
+<a id="delete-a-project-peering"></a>
+### 프로젝트 피어링 삭제 { #delete-a-project-peering }
 
 1. **Network > Peering Gateway > 프로젝트 피어링**으로 이동합니다.
 2. 피어링 목록에서 삭제할 프로젝트 피어링을 선택합니다.
 3. **프로젝트 피어링 삭제** 버튼을 클릭합니다.
 
-## 공통 기능
+<a id="common-feature"></a>
+## 공통 기능 { #common-feature }
 
 피어링(피어링, 리전 피어링, 프로젝트 피어링)에서 제공하는 공통 기능을 설명합니다.
 
-### 피어링 허용 대상 관리
+<a id="manage-peering-allowed-targets"></a>
+### 피어링 허용 대상 관리 { #manage-peering-allowed-targets }
 
 리전 피어링, 프로젝트 피어링 페이지 하위 메뉴로 다른 프로젝트 간 피어링 연결 요청을 받는 쪽에서 설정할 수 있습니다. 요청을 보내는 VPC의 피어 테넌트 ID와 피어 VPC ID를 입력하여 피어링 허용 VPC에 추가한 후 피어가 보내는 요청을 수락할 수 있게 합니다.
 
+<a id="manage-peering-allowed-targets-add-an-peering-allowed-target"></a>
 #### 피어링 허용 대상 추가
 
 1. **Network > Peering Gateway > 리전 피어링** 또는 **Network > Peering Gateway > 프로젝트 피어링**으로 이동합니다.
@@ -166,17 +181,20 @@ API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어
     !!! tip "알아두기"
         피어 테넌트 ID와 피어 VPC ID 확인 방법은 하단 '참고 자료' 항목을 참고하세요.
 
+<a id="manage-peering-allowed-targets-delete-a-peering-allowed-target"></a>
 #### 피어링 허용 대상 삭제
 
 1. **Network > Peering Gateway > 리전 피어링** 또는 **Network > Peering Gateway > 프로젝트 피어링**으로 이동합니다.
 2. **피어링 허용 대상 관리** 버튼을 클릭합니다.
 3. 피어링 허용 VPC 목록에서 삭제할 대상의 삭제 버튼을 클릭합니다.
 
-### 라우트
+<a id="route"></a>
+### 라우트 { #route }
 
 피어링에서 제공하는 **라우트** 설정을 이용하면 피어 VPC의 VM 인스턴스를 경유하여 다른 VPC로 트래픽을 전달하는 구성을 할 수 있습니다. 피어링의 라우트는 피어링으로부터 유입된 모든 트래픽을 처리할 VM 인스턴스의 포트 및 가상 IP 포트를 지정하여 설정할 수 있습니다. 라우트의 게이트웨이가 되는 VM 인스턴스에는 Network Virtual Appliance VM을 배치하여 VM 인스턴스 내부에서 트래픽을 제어하고 다른 피어링으로 트래픽을 전달할 수 있습니다.
 * 피어링으로 허브 & 스포크(Hub & Spoke) 형태의 VPC 연결을 구성하고 허브 VPC에 위치한 Network Virtual Appliance로 모든 트래픽을 제어하고자 하는 구성은 피어링의 라우팅 기능을 활용하여 구성할 수 있습니다.
 
+<a id="route-create-route"></a>
 #### 라우트 생성
 
 1. 라우트 설정을 원하는 피어링으로 선택합니다.
@@ -195,6 +213,7 @@ API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어
 
 7. **확인** 버튼을 클릭합니다.
 
+<a id="route-delete-route"></a>
 #### 라우트 삭제
 
 1. 라우트 설정 삭제를 원하는 피어링을 선택합니다.
@@ -207,9 +226,11 @@ API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어
 4. 삭제 대상의 **-** 버튼을 클릭합니다.
 5. **확인** 버튼을 클릭합니다.
 
-## 참고 자료
+<a id="other-considerations"></a>
+## 참고 자료 { #other-considerations }
 
-### 피어 VPC ID 확인 방법
+<a id="how-to-check-peer-vpc-id"></a>
+### 피어 VPC ID 확인 방법 { #how-to-check-peer-vpc-id }
 
 다음 절차로 피어의 **VPC ID**를 확인할 수 있습니다.
 
@@ -221,7 +242,8 @@ API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어
 3. 피어링 대상 VPC를 선택합니다.
 4. **기본 정보 > VPC 이름**에 표기된 UUID 값을 복사합니다.
 
-### 피어 테넌트 ID 확인 방법
+<a id="how-to-check-the-peer-tenant-id"></a>
+### 피어 테넌트 ID 확인 방법 { #how-to-check-the-peer-tenant-id }
 
 다음 절차로 피어의 **테넌트 ID**를 확인할 수 있습니다.
 
@@ -233,7 +255,8 @@ API를 이용하여 피어링과 연관된 포트를 조회하는 경우, 피어
 3. 피어링 대상 또는 화면에 표기되는 VPC 중 아무거나 1개를 선택합니다.
 4. **기본 정보 > 테넌트 ID**에 표기된 ID 값을 복사합니다.
 
-### 피어 ID 확인 방법
+<a id="how-to-check-the-peer-id"></a>
+### 피어 ID 확인 방법 { #how-to-check-the-peer-id }
 
 다음 절차로 피어링의 피어 ID를 확인할 수 있습니다.
 
