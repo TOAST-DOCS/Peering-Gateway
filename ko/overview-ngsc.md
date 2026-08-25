@@ -1,8 +1,10 @@
-## Network > Peering Gateway > 개요
+<a id="network-peering-gateway-overview"></a>
+## Network > Peering Gateway > 개요 { #network-peering-gateway-overview }
 
 Peering Gateway 서비스를 사용하면 서로 다른 두 개의 가상 사설 네트워크를 연결할 수 있습니다. 서로 다른 두 **VPC**를 연결하여, **VPC**에 할당된 사설 IP를 기반으로 상대 **VPC** 내의 리소스에 직접 액세스할 수 있습니다.
 
-### 주요 기능
+<a id="main-features"></a>
+### 주요 기능 { #main-features }
 
 Peering Gateway 서비스에서 제공하는 피어링은 다음과 같습니다.
 
